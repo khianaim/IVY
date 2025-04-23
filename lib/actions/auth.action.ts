@@ -1,6 +1,6 @@
 "use server"; 
 
-import { db, auth } from "../../../firebase/admin";
+import { db, auth } from "@firebase/admin";
 import { cookies } from "next/headers";
 import { NextResponse } from "next/server";
 
