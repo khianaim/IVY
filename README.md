@@ -1,3 +1,6 @@
+*Ready to master your job interviews? Check out a real-time AI-driven mock interview platform built with Next.js and Vapi AI, offering personalized prep sessions*
+
+
 🧠 IVY – AI INTERVIEW COACH
 Ivy is an AI-powered real-time interview platform designed for job seekers who want instant feedback, performance insights, and a clean, modern interface. Built to simulate real interviews with recruiters, Ivy helps users prepare smarter, not harder.
 
