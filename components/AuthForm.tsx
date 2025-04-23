@@ -10,7 +10,7 @@ import { toast } from "sonner";
 import FormField from "@/components/FormField";
 import { useRouter } from "next/navigation";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "@/firebase/client";
+import { auth } from "@firebase/client";
 import { signIn, signUp } from "@/lib/actions/auth.action";
 
 // Define the schema for the form
