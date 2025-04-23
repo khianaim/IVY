@@ -21,13 +21,11 @@
       {
         "name": "next"
       }
-    ], 
+    ],
     "baseUrl": ".",
     "paths": {
-     "@/*": ["./*"],
-      "@firebase/*": [
-        "./firebase/*"
-      ]
+      "@/*": ["src/*"],
+      "@firebase/*": ["firebase/*"]
     }
   },
   "include": [
@@ -42,4 +40,5 @@
     "node_modules"
   ]
 }
+
 
