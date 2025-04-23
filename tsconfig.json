@@ -15,7 +15,7 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve", // Change this line
+    "jsx": "preserve",
     "incremental": true,
     "plugins": [
       {
@@ -24,7 +24,10 @@
     ],
     "paths": {
       "@/*": [
-        "./src/*",  "./*"
+        "./src/*"
+      ],
+      "@firebase/*": [
+        "./firebase/*"
       ]
     }
   },
@@ -34,9 +37,10 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "next.config.ts",
-    "src/types/index.d.ts",
+    "src/types/index.d.ts"
   ],
   "exclude": [
     "node_modules"
   ]
 }
+
