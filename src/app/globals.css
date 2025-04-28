@@ -1,0 +1,470 @@
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap");
+
+@import "tailwindcss";
+
+@plugin "tailwindcss-animate";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --font-national: "National Park", serif;
+}
+
+:root {
+  --radius: 0.625rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: var(--light-100);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
+}
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+
+/* Custom scrollbar (to match webpage color) */
+body {
+  overflow: scroll;
+}
+
+::-webkit-scrollbar {
+  width: 12px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2d2d31d6; /* Color of the scrollbar thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Color of the scrollbar thumb on hover */
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  p {
+    @apply text-white;
+  }
+  h2 {
+    @apply text-3xl font-semibold;
+  }
+  h3 {
+    @apply text-2xl font-semibold;
+  }
+  ul {
+    @apply list-disc list-inside;
+  }
+  li {
+    @apply text-white;
+  }
+}
+
+@layer components {
+/* Call Button Settings */
+.btn-call {
+  @apply inline-block px-7 py-3 font-bold text-sm leading-5 text-white transition-all duration-150 bg-green-700 border border-transparent rounded-full shadow-sm focus:outline-none focus:shadow-2xl min-w-28 cursor-pointer items-center justify-center overflow-visible;
+
+  /* Custom 3D Effect (Same as Glass Button without Color Change) */
+  background-image: linear-gradient(to right, #4caf50, #388e3c); /* Green gradient */
+  background-clip: padding-box;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow:
+    inset 0 0.05em 0 #ffffff0d,
+    0 0.05em 0 #ffffff0a,
+    0 0.1em 0 #ffffff0a,
+    0 0.25em 0 #cccccc10,
+    0 0.3em 0 #bbbbbb10,
+    0 0.4em 0 #aaaaaa10,
+    0 0.45em 0 #99999910,
+    0 0.5em 0.5em #ffffff05;
+}
+
+/* Active state of the button */
+.btn-call:active {
+  transform: translateY(0.15em);
+  box-shadow:
+    inset 0 0.05em 0 #ffffff20,
+    0 0.05em 0 #ffffff10,
+    0 0.1em 0 #ffffff10,
+    0 0.15em 0 #cccccc20,
+    0 0.2em 0 #bbbbbb20,
+    0 0.25em 0 #aaaaaa20,
+    0 0.3em 0 0 #99999920;
+}
+
+  .btn-disconnect {
+    @apply inline-block px-7 py-3 text-sm font-bold leading-5 text-white transition-colors duration-150 bg-red-700 border border-transparent rounded-full shadow-sm focus:outline-none focus:shadow-2xl active:bg-red-500 hover:bg-red-600 min-w-28;
+  
+    
+  /* Custom 3D Effect */
+  background-image: linear-gradient(to right, #af4c4c, #8e3838); /* Green gradient */
+  background-clip: padding-box;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow:
+    inset 0 0.05em 0 #ffffff0d,
+    0 0.05em 0 #ffffff0a,
+    0 0.1em 0 #ffffff0a,
+    0 0.25em 0 #cccccc10,
+    0 0.3em 0 #bbbbbb10,
+    0 0.4em 0 #aaaaaa10,
+    0 0.45em 0 #99999910,
+    0 0.5em 0.5em #ffffff05;
+}
+
+/* Active state of end call */
+.btn-disconnect:active {
+  transform: translateY(0.15em);
+  box-shadow:
+    inset 0 0.05em 0 #ffffff20,
+    0 0.05em 0 #ffffff10,
+    0 0.1em 0 #ffffff10,
+    0 0.15em 0 #cccccc20,
+    0 0.2em 0 #bbbbbb20,
+    0 0.25em 0 #aaaaaa20,
+    0 0.3em 0 0 #99999920;
+}
+
+
+/* All Other Button Settings on Website */
+  .glass-button {
+    backdrop-filter: blur(10px);
+    background-color: rgb(0, 0, 0);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow:
+      inset 0 0.05em 0 #ffffff0d,
+      0 0.05em 0 #ffffff0a,
+      0 0.1em 0 #ffffff0a,
+      0 0.25em 0 #cccccc10,
+      0 0.3em 0 #bbbbbb10,
+      0 0.4em 0 #aaaaaa10,
+      0 0.45em 0 #99999910,
+      0 0.5em 0.5em #ffffff05;
+    animation: glassGlow 5s ease-in-out infinite;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .glass-button:active {
+    transform: translateY(0.15em);
+    box-shadow:
+      inset 0 0.05em 0 #ffffff20,
+      0 0.05em 0 #ffffff10,
+      0 0.1em 0 #ffffff10,
+      0 0.15em 0 #cccccc20,
+      0 0.2em 0 #bbbbbb20,
+      0 0.25em 0 #aaaaaa20,
+      0 0.3em 0 0 #99999920;
+  }
+  
+  .glow-text {
+    background: linear-gradient(to right, #f4da75, #aecde6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+/* Nav Bar Buttons */
+  .neumorphic-btn {
+    background: #000000; 
+    border-radius: 20px;
+    box-shadow: inset 5px 5px 10px #0a0a0a,
+                inset -5px -5px 10px #3b3b3b;
+    padding: 4px 15px;
+    font-weight: 600;
+    color: #eee; 
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 16px;
+  }
+  
+  .neumorphic-btn:hover {
+    box-shadow: inset 4px 4px 8px #0a0a0a,
+                inset -4px -4px 8px #4b4a4a;
+    transform: scale(0.98);
+  }
+  
+/*Field inputs in forms*/
+  .info {
+    border: #555 solid 1px;
+    outline: none;
+    border-radius: 15px;
+    padding: 1em;
+    background-color: #030303;
+    box-shadow: inset 2px 5px 10px rgba(0,0,0,0.3);
+    transition: 300ms ease-in-out;
+  }
+  .info:focus {
+    transform: scale(1.05);
+    box-shadow: 13px 13px 100px #cce7f8,
+              -13px -13px 100px #bbe5f1;
+      }
+  
+/*Sign in or Sign up*/
+  .form {
+    @apply w-full;
+  }
+
+.label {
+  @apply text-white font-normal;
+}
+
+.sign {
+  border: #555 solid 1px !important;
+  background-color: #030303 !important;
+  border-radius: 15px !important;
+  padding: 1em !important;
+  box-shadow: inset 2px 5px 10px rgba(0,0,0,0.3) !important;
+  transition: 300ms ease-in-out;
+}
+
+.sign:focus {
+  transform: scale(1.05);
+  box-shadow: 13px 13px 100px #969696,
+              -13px -13px 100px #f6f9d2 !important;
+}
+
+.interviews-section {
+  @apply flex flex-wrap gap-4 max-lg:flex-col w-full items-stretch;
+}
+
+/*Demo Interview Section */
+
+.interview-instructions {
+  max-height: 400px; 
+  overflow-y: auto; 
+  padding: 20px;
+  background-color: #f4f4f400;
+  border-radius: 8px;
+}
+
+.instruction {
+  margin-bottom: 21px; /* Space between paragraphs */
+  font-size: 16px;
+  line-height: 1.4;
+  color: rgba(128, 128, 128, 0.425); /* Start with gray text */
+  transition: color 0.3s ease; /* Smooth transition for text color change */
+}
+
+.instruction.active {
+  color: white; /* Highlight text in white when it's in view */
+}
+
+.instruction strong {
+  color: #aecde6; /* Color for bolded text */
+}
+
+.interview-instructions .instruction strong {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-size: 1.1rem;
+}
+
+
+
+  /* Interview Call Section */
+  .call-view {
+    @apply flex sm:flex-row flex-col gap-10 items-center justify-between w-full ;
+
+    h3 {
+      @apply text-center text-white mt-5;
+    }
+
+     /* Card box format for AI Interviewer- IVY & User*/
+    .card-interviewer {
+      @apply flex-center flex-col gap-2 p-7 h-[400px] bg-white/10 rounded-lg border-2 border-white flex-1 sm:basis-1/2 w-full;
+    }
+    .card-border {
+      @apply border-2 border-gray-400 backdrop-blur-md p-1 rounded-2xl;
+    }
+    
+    .card {
+      @apply bg-white/10 rounded-2xl min-h-full backdrop-blur-sm w-full;
+    }
+    
+        /* Default picture format for AI Interviewer- IVY & User*/
+    .avatar {
+      @apply z-10 flex items-center justify-center size-[120px] relative;
+
+    }
+  }
+
+  .animate-speak {
+    @apply absolute inline-flex size-5/6 animate-ping rounded-full bg-red-300 opacity-75;
+  }
+
+  .transcript-border {
+    @apply border-transparent p-0.5 rounded-lg w-full max-w-lg; 
+
+    .transcript {
+      @apply rounded-3xl min-h-4 px-3 py-2 flex items-center justify-center;
+    }
+  }
+
+  /* Feedback Section after Interview*/
+.section-feedback {
+  @apply flex flex-col gap-8 pl-10 pr-10 pb-8 max-w-4xl mx-auto max-sm:px-4 text-sm leading-5;
+
+    /* Neumorphism effect */
+    background-color: rgba(245, 249, 244, 0.032); /* Light background */
+    border-radius: 12px;
+    box-shadow: 
+      3px 3px 10px rgba(0, 0, 0, 0.2), 
+      -3px -3px 10px rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+/* Sign in and SIgn up Layout*/
+  .auth-layout {
+    @apply flex items-center justify-center mx-auto max-w-7xl min-h-screen max-sm:px-4 max-sm:py-8;
+  }
+
+  .root-layout {
+    @apply flex mx-auto max-w-7xl flex-col gap-12 my-12 px-16 max-sm:px-4 max-sm:my-8;
+  }
+
+/* Dashboard once signed in Layout*/
+  /* Skills*/
+  .tech-tooltip {
+    @apply absolute bottom-full mb-1 hidden group-hover:flex px-2 py-1 text-xs text-white bg-white/10 rounded-md shadow-md;
+  }
+
+  /* Grids for interviews taken*/
+  .card-interview {
+    @apply  bg-transparent backdrop-blur-lg border border-white/20 shadow-2xl rounded-2xl min-h-full flex flex-col p-8 gap-6 justify-between text-white backdrop-blur-lg;
+  
+    background-color: rgba(245, 249, 244, 0.032);
+    border-radius: 18px;
+    box-shadow: 
+      3px 3px 10px rgba(0, 0, 0, 0.2), 
+      -3px -3px 10px rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+  }
+  
+    .badge-text {
+      @apply text-sm font-semibold capitalize;
+    }
+  }
+  
+@utility flex-center {
+  @apply flex items-center justify-center;
+}
+
+@utility animate-fadeIn {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
