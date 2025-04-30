@@ -139,7 +139,7 @@ const HomePage = () => {
   
     <div className="relative">
   {/* Hero Section */}
-  <HeroGeometric title1="IVY" title2="AI-Powered Interview Coach">
+  <HeroGeometric title1="IVY" title2="AI-Powered Interview Coach" showTitle={true} >
 
   <div className="mt-12 flex flex-col items-center gap-8">
   {/* Testimonials Section (1st row) */}
