@@ -74,10 +74,12 @@ function HeroGeometric({
     title1 = "",
     title2 = "",
     children,
+    showTitle = true,
 }: {
     title1?: string;
     title2?: string;
     children?: React.ReactNode;
+    showTitle?: boolean;
 }) {
     const fadeUpVariants = {
         hidden: { opacity: 0, y: 30 },
@@ -164,20 +166,19 @@ function HeroGeometric({
                             </span>
                         </h1>
                     </motion.div>
-
+                    {showTitle && (
                     <motion.div
-                        custom={2}
-                        variants={fadeUpVariants}
-                        initial="hidden"
-                        animate="visible"
+                    custom={2}
+                    variants={fadeUpVariants}
+                    initial="hidden"
+                    animate="visible"
                     >
-                      <p className="text-base sm:text-md md:text-lg text-[#c2e4ff] mb-8 leading-relaxed font-light tracking-wide whitespace-nowrap px-4">
-                      Real-Time Interviews. Instant Feedback. Built for You.
-                      </p>
-
+                    <p className="text-base sm:text-md md:text-lg text-[#c2e4ff] mb-8 leading-relaxed font-light tracking-wide whitespace-nowrap px-4">
+                        Real-Time Interviews. Instant Feedback. Built for You.
+                    </p>
                     </motion.div>
-
-                      {/* 👉 Render buttons or any children passed here */}
+                    )}
+                      {/*Render buttons or any children passed here */}
                       <div className="flex justify-center gap-4 mt-6">
                         {children}
                     </div>
